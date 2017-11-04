@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SnapKit
-
 class ViewController: UIViewController {
     
     let tableView = UITableView.init(frame: .zero)
