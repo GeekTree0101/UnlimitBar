@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  UnlimitBar
-//
-//  Created by Geektree0101 on 11/04/2017.
-//  Copyright (c) 2017 Geektree0101. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -17,9 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow.init()
-        let viewController = ViewController.init(nibName: nil, bundle: nil)
-        
-        let navigationController = UINavigationController.init(rootViewController: viewController)
+        let viewController = CatFeedController()
+        let navigationController = UINavigationController(rootViewController: viewController)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         

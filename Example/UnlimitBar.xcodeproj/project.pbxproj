@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* CatFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* CatFeedController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7FABBE55FDEB3FEC24723342 /* Pods_UnlimitBar_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E8932C0FC216379FA818D7 /* Pods_UnlimitBar_Example.framework */; };
-		9B8F147B1FADC9290016F1AE /* SingleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8F14771FADC9280016F1AE /* SingleViewController.xib */; };
-		9B8F147C1FADC9290016F1AE /* TestNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F14781FADC9280016F1AE /* TestNavbar.swift */; };
-		9B8F147D1FADC9290016F1AE /* TestNavbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8F14791FADC9280016F1AE /* TestNavbar.xib */; };
-		9B8F147E1FADC9290016F1AE /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F147A1FADC9290016F1AE /* SingleViewController.swift */; };
+		9B9B6C931FAF3CDC009627D8 /* CatPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B6C911FAF3CDC009627D8 /* CatPageViewController.swift */; };
+		9B9B6C941FAF3CDC009627D8 /* CatPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B6C921FAF3CDC009627D8 /* CatPageViewController.xib */; };
+		9B9B6C961FAF3FD7009627D8 /* UIColor+Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B6C951FAF3FD7009627D8 /* UIColor+Cat.swift */; };
+		9BC86B951FAF2331005C315B /* CatTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC86B931FAF2331005C315B /* CatTableCell.swift */; };
+		9BC86B961FAF2331005C315B /* CatTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC86B941FAF2331005C315B /* CatTableCell.xib */; };
+		9BC86B981FAF254B005C315B /* CatFeedNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC86B971FAF254B005C315B /* CatFeedNavigationBar.swift */; };
+		9BC86B9B1FAF255F005C315B /* CatFeedNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC86B9A1FAF255F005C315B /* CatFeedNavigationBar.xib */; };
+		9BC86B9D1FAF294D005C315B /* CatSingleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC86B9C1FAF294D005C315B /* CatSingleNavigationBar.swift */; };
+		9BC86BA11FAF297C005C315B /* CatSingleNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC86BA01FAF297C005C315B /* CatSingleNavigationBar.xib */; };
+		9BC86BA81FAF330A005C315B /* UIView+loadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC86BA71FAF330A005C315B /* UIView+loadView.swift */; };
 		B146F9CD7D7AB2CA0E99DEF1 /* Pods_UnlimitBar_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D7742DA8BEA8DA158CEB01 /* Pods_UnlimitBar_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +43,7 @@
 		607FACD01AFB9204008FA782 /* UnlimitBar_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnlimitBar_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* CatFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* UnlimitBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnlimitBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,10 +53,16 @@
 		67BC354EB38E0B769BA9AD8F /* Pods-UnlimitBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlimitBar_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnlimitBar_Tests/Pods-UnlimitBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F5BE4F169384E23317D2968 /* Pods-UnlimitBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlimitBar_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnlimitBar_Example/Pods-UnlimitBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7CCAF6D03CEEF23BD0E6464D /* UnlimitBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UnlimitBar.podspec; path = ../UnlimitBar.podspec; sourceTree = "<group>"; };
-		9B8F14771FADC9280016F1AE /* SingleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleViewController.xib; path = ../../../CustomNavigationBar/CustomNavigationBar/SingleViewController.xib; sourceTree = "<group>"; };
-		9B8F14781FADC9280016F1AE /* TestNavbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestNavbar.swift; path = ../../../CustomNavigationBar/CustomNavigationBar/TestNavbar.swift; sourceTree = "<group>"; };
-		9B8F14791FADC9280016F1AE /* TestNavbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestNavbar.xib; path = ../../../CustomNavigationBar/CustomNavigationBar/TestNavbar.xib; sourceTree = "<group>"; };
-		9B8F147A1FADC9290016F1AE /* SingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleViewController.swift; path = ../../../CustomNavigationBar/CustomNavigationBar/SingleViewController.swift; sourceTree = "<group>"; };
+		9B9B6C911FAF3CDC009627D8 /* CatPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPageViewController.swift; sourceTree = "<group>"; };
+		9B9B6C921FAF3CDC009627D8 /* CatPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatPageViewController.xib; sourceTree = "<group>"; };
+		9B9B6C951FAF3FD7009627D8 /* UIColor+Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Cat.swift"; sourceTree = "<group>"; };
+		9BC86B931FAF2331005C315B /* CatTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableCell.swift; sourceTree = "<group>"; };
+		9BC86B941FAF2331005C315B /* CatTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatTableCell.xib; sourceTree = "<group>"; };
+		9BC86B971FAF254B005C315B /* CatFeedNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedNavigationBar.swift; sourceTree = "<group>"; };
+		9BC86B9A1FAF255F005C315B /* CatFeedNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatFeedNavigationBar.xib; sourceTree = "<group>"; };
+		9BC86B9C1FAF294D005C315B /* CatSingleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSingleNavigationBar.swift; sourceTree = "<group>"; };
+		9BC86BA01FAF297C005C315B /* CatSingleNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatSingleNavigationBar.xib; sourceTree = "<group>"; };
+		9BC86BA71FAF330A005C315B /* UIView+loadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+loadView.swift"; sourceTree = "<group>"; };
 		9EE3EB57E6DC66403FA14AE9 /* Pods-UnlimitBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlimitBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnlimitBar_Example/Pods-UnlimitBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A0E8932C0FC216379FA818D7 /* Pods_UnlimitBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnlimitBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,15 +131,14 @@
 		607FACD21AFB9204008FA782 /* Example for UnlimitBar */ = {
 			isa = PBXGroup;
 			children = (
-				9B8F147A1FADC9290016F1AE /* SingleViewController.swift */,
-				9B8F14771FADC9280016F1AE /* SingleViewController.xib */,
-				9B8F14781FADC9280016F1AE /* TestNavbar.swift */,
-				9B8F14791FADC9280016F1AE /* TestNavbar.xib */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				9B9B6C7A1FAF38FE009627D8 /* Controllers */,
+				9B8F147F1FAF06790016F1AE /* ExampleNavBar */,
+				9BC86BA61FAF32F9005C315B /* Extension */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				9B9B6C801FAF392D009627D8 /* Views */,
 			);
 			name = "Example for UnlimitBar";
 			path = UnlimitBar;
@@ -166,6 +177,45 @@
 				6567A1CB9DE6CB0BE9C7048E /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		9B8F147F1FAF06790016F1AE /* ExampleNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				9BC86B971FAF254B005C315B /* CatFeedNavigationBar.swift */,
+				9BC86B9A1FAF255F005C315B /* CatFeedNavigationBar.xib */,
+				9BC86B9C1FAF294D005C315B /* CatSingleNavigationBar.swift */,
+				9BC86BA01FAF297C005C315B /* CatSingleNavigationBar.xib */,
+			);
+			name = ExampleNavBar;
+			sourceTree = "<group>";
+		};
+		9B9B6C7A1FAF38FE009627D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD71AFB9204008FA782 /* CatFeedController.swift */,
+				9B9B6C911FAF3CDC009627D8 /* CatPageViewController.swift */,
+				9B9B6C921FAF3CDC009627D8 /* CatPageViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9B9B6C801FAF392D009627D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BC86B931FAF2331005C315B /* CatTableCell.swift */,
+				9BC86B941FAF2331005C315B /* CatTableCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9BC86BA61FAF32F9005C315B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9BC86BA71FAF330A005C315B /* UIView+loadView.swift */,
+				9B9B6C951FAF3FD7009627D8 /* UIColor+Cat.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				9B8F147D1FADC9290016F1AE /* TestNavbar.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				9B8F147B1FADC9290016F1AE /* SingleViewController.xib in Resources */,
+				9BC86B961FAF2331005C315B /* CatTableCell.xib in Resources */,
+				9BC86B9B1FAF255F005C315B /* CatFeedNavigationBar.xib in Resources */,
+				9B9B6C941FAF3CDC009627D8 /* CatPageViewController.xib in Resources */,
+				9BC86BA11FAF297C005C315B /* CatSingleNavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,10 +348,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UnlimitBar_Example/Pods-UnlimitBar_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UnlimitBar/UnlimitBar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UnlimitBar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,10 +443,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8F147C1FADC9290016F1AE /* TestNavbar.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				9B8F147E1FADC9290016F1AE /* SingleViewController.swift in Sources */,
+				9BC86B951FAF2331005C315B /* CatTableCell.swift in Sources */,
+				9BC86BA81FAF330A005C315B /* UIView+loadView.swift in Sources */,
+				9BC86B981FAF254B005C315B /* CatFeedNavigationBar.swift in Sources */,
+				607FACD81AFB9204008FA782 /* CatFeedController.swift in Sources */,
+				9B9B6C961FAF3FD7009627D8 /* UIColor+Cat.swift in Sources */,
+				9B9B6C931FAF3CDC009627D8 /* CatPageViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				9BC86B9D1FAF294D005C315B /* CatSingleNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +588,7 @@
 			baseConfigurationReference = 9EE3EB57E6DC66403FA14AE9 /* Pods-UnlimitBar_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnlimitBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -545,6 +604,7 @@
 			baseConfigurationReference = 6F5BE4F169384E23317D2968 /* Pods-UnlimitBar_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnlimitBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

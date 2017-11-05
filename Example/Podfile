@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'UnlimitBar_Example' do
   pod 'UnlimitBar', :path => '../'
-
+  pod 'SnapKit'
   target 'UnlimitBar_Tests' do
     inherit! :search_paths
 

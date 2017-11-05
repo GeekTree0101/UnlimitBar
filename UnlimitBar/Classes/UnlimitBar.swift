@@ -27,7 +27,7 @@ fileprivate class UnlimitNavBarContainer: UIView {
     }
 }
 
-extension UIViewController {
+public extension UIViewController {
     
     enum AnimateType {
         case autohide
