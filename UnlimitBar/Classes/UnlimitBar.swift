@@ -31,7 +31,9 @@ public extension UIViewController {
     
     enum AnimateType {
         case autohide
-        case scrollHide
+        //case scrollHide(CGFloat) // ratio: 0.0 ~ 1.0
+        case transition(CGFloat, CGFloat) // startOffset, endOffset
+        case reset
     }
     
     func applyNavigationBar(_ customView: UIView,
@@ -45,27 +47,27 @@ public extension UIViewController {
         navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.navigationBar.removeFromSuperview()
         
-        if let backButton = backButton, navigationController.viewControllers.count <= 1 {
+        if let backButton = backButton,
+            navigationController.viewControllers.count <= 1 {
             backButton.removeFromSuperview()
         }
         
         let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
         
-        // let hasBackButton = navigationController.viewControllers.count > 1
-        let _customNavigationBarContainerView = UnlimitNavBarContainer(statusBarColor: statusBarColor,
+        let customNavigationBarContainerView = UnlimitNavBarContainer(statusBarColor: statusBarColor,
                                                                        expectHeight: expectHeight)
-        _customNavigationBarContainerView.backgroundColor = statusBarColor
-        _customNavigationBarContainerView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(_customNavigationBarContainerView)
-        self.view.addConstraints(_customNavigationBarContainerViewConstraints( _customNavigationBarContainerView,
+        customNavigationBarContainerView.backgroundColor = statusBarColor
+        customNavigationBarContainerView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(customNavigationBarContainerView)
+        self.view.addConstraints(customNavigationBarContainerViewConstraints( customNavigationBarContainerView,
                                                                                self.view,
                                                                                expectHeight,
                                                                                statusBarHeight))
         
-        _customNavigationBarContainerView.addSubview(customView)
+        customNavigationBarContainerView.addSubview(customView)
         customView.translatesAutoresizingMaskIntoConstraints = false
-        _customNavigationBarContainerView.addConstraints(self._customNavigationBarConstraint(customView,
-                                                                                             _customNavigationBarContainerView,
+        customNavigationBarContainerView.addConstraints(self._customNavigationBarConstraint(customView,
+                                                                                             customNavigationBarContainerView,
                                                                                              statusBarHeight))
         self.updateRelatedViewConstraint(contraint: subViewTopConstraint)
         self.updateRelatedScrollViewContentInset(scrollView: relatedScrollView)
@@ -81,20 +83,24 @@ public extension UIViewController {
         scrollView.contentInset.top = scrollView.contentInset.top + containerView.expectHeight
     }
     
-    
-    func transitionAnimateion(_ scrollView: UIScrollView, type: AnimateType, duration: TimeInterval = 0.5) {
+    func transitionAnimateion(_ scrollView: UIScrollView,
+                              type: AnimateType,
+                              duration: TimeInterval = 0.5) {
+        guard let containerView = self.loadUnlimitNavBarContainer(),
+            let navBar = containerView.loadNavigationBar() else { return }
+        
+        let expectHeight = containerView.expectHeight
+        
         switch type {
         case .autohide:
-            guard let containerView = self.loadUnlimitNavBarContainer(),
-                let navBar = containerView.loadNavigationBar() else { return }
-            let expectHeight = containerView.expectHeight
             let velocity = scrollView.panGestureRecognizer.velocity(in: self.view).y
             
             let animate = {
                 if velocity < 0, !containerView.containerIsHidden {
                     containerView.containerIsHidden = true
                     navBar.alpha = 0.0
-                    containerView.transform = CGAffineTransform(translationX: 0.0, y: -expectHeight)
+                    containerView.transform = CGAffineTransform(translationX: 0.0,
+                                                                y: -expectHeight)
                 } else if velocity > 0, containerView.containerIsHidden {
                     navBar.alpha = 1.0
                     containerView.containerIsHidden = false
@@ -104,11 +110,39 @@ public extension UIViewController {
             
             UIView.animate(withDuration: duration,
                            delay: 0.0,
-                           options: !containerView.containerIsHidden ? .curveEaseOut: .curveEaseIn,
+                           options: !containerView.containerIsHidden ?
+                            .curveEaseOut:
+                            .curveEaseIn,
                            animations: animate,
                            completion: nil)
-        case .scrollHide:
-            // TODO: scroll hide
+        case .transition(let showOffset, let hideOffset):
+            let offsetY = scrollView.contentOffset.y
+            
+            let animate = {
+                if offsetY > hideOffset, !containerView.containerIsHidden {
+                    containerView.containerIsHidden = true
+                    navBar.alpha = 0.0
+                    containerView.transform = CGAffineTransform(translationX: 0.0,
+                                                                y: -expectHeight)
+                } else if offsetY < showOffset, containerView.containerIsHidden {
+                    navBar.alpha = 1.0
+                    containerView.containerIsHidden = false
+                    containerView.transform = .identity
+                }
+            }
+            
+            UIView.animate(withDuration: duration,
+                           delay: 0.0,
+                           options: !containerView.containerIsHidden ?
+                            .curveEaseOut:
+                            .curveEaseIn,
+                           animations: animate,
+                           completion: nil)
+            break
+        case .reset:
+            navBar.alpha = 1.0
+            containerView.containerIsHidden = false
+            containerView.transform = .identity
             break
         }
     }
@@ -155,7 +189,7 @@ public extension UIViewController {
                                    constant: 0.0)]
     }
     
-    private func _customNavigationBarContainerViewConstraints(_ customView: UIView,
+    private func customNavigationBarContainerViewConstraints(_ customView: UIView,
                                                               _ targetView: UIView,
                                                               _ expectHeight: CGFloat,
                                                               _ statusBarHeight: CGFloat) -> [NSLayoutConstraint] {

@@ -51,6 +51,11 @@ class CatFeedController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.transitionAnimateion(self.tableView, type: .reset)
+    }
 }
 
 extension CatFeedController: UITableViewDelegate {
@@ -88,6 +93,7 @@ extension CatFeedController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Unlimit Navigation Bar Animation
         self.transitionAnimateion(scrollView, type: .autohide)
+        // self.transitionAnimateion(scrollView, type: .transition(100, 300))
     }
 }
 
