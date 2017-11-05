@@ -7,47 +7,70 @@
 
 <img src="https://github.com/GeekTree0101/UnlimitBar/blob/master/resource/UnlimitBar1.png" />
 <img src="https://github.com/GeekTree0101/UnlimitBar/blob/master/resource/UnlimitBar2.png" />
+
+### Feel the freedom from UINavigationBar ~~Holy Shit~~ Restrictions
+
+## [Guideline]
+
+1. import UnlimitBar
+2. create custom navigation bar as UIView 
+3. call applyNavigationBar method
++ If you want animate navigationBar then use transitionAnimateion method
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+1. ScrollView case
 ```swift
-    // If viewController has Scroll view
-
-        let bundle = Bundle.init(for: TestNavbar.self)
-        let nib = UINib(nibName: String(describing: TestNavbar.self), bundle: bundle)
-        let nibView = nib.instantiate(withOwner: TestNavbar.self, options: nil).first
-
-        let customNavBar = nibView as! TestNavbar // Custom NavigationBar (UIView)
-
-        self.applyNavigationBar(customNavBar,
-                                expectHeight: 44.0, // customNavBar height
-                                backButton: customNavBar.backButton, // backButton (UIButton)
-                                relatedScrollView: tableView)
-
-        // add touch target
-        customNavBar.backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
-
-   // If top component has top constraint
-
-    // @IBOutlet weak var topConstraint: NSLayoutConstraint!
-
-        let bundle = Bundle.init(for: TestNavbar.self)
-        let nib = UINib(nibName: String(describing: TestNavbar.self), bundle: bundle)
-        let nibView = nib.instantiate(withOwner: TestNavbar.self, options: nil).first
-        let customNavBar = nibView as! TestNavbar
+    // Create Custom UIView for NavigationBar
+    let catFeedNavBar = CatFeedNavigationBar.loadView()
         
-        self.applyNavigationBar(customNavBar, expectHeight: 44.0, backButton: customNavBar.backButton, subViewTopConstraint: topConstraint)
+    // apply custom navigation bar
+    self.applyNavigationBar(catFeedNavBar, // custom navbar
+                            expectHeight: CatFeedNavigationBar.Const.height, // navbar default height
+                            backButton: nil, // back button auto hide
+                            statusBarColor: UIColor.white, // status bar color
+                            relatedScrollView: tableView) // tableView -> autoresize content top inset
+                                
 
-        
-        customNavBar.titleLabel.text = "SingleView"
-        customNavBar.backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
-        customNavBar.testButton.addTarget(self, action: #selector(hello), for: .touchUpInside)
-        
-        self.view.backgroundColor = .yellow
+```
+transition animation
+```swift
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.transitionAnimateion(scrollView, type: .autohide) // auto show/hide
+        // if you want control show/hide navbar base scroll offset
+        self.transitionAnimateion(scrollView, type: .transition(SHOW_OFFSET, HIDE_OFFSET)) 
+        self.transitionAnimateion(scrollView, type: .reset) // reset animation
+    }
+
 ```
 
-## Requirements
+2. Single ViewController
+- first you need uppermost top constraint of view on view controller
+```swift
+    @IBOutlet weak var topConstraint: NSLayoutConstraint! 
+    or
+    let topConstraint: NSLayoutConstraint ...
+
+```
+- insert constraint parameter on applyNavigationBar method
+```swift 
+    let catNavigationBar = CatSingleNavigationBar.loadView()
+        
+    self.applyNavigationBar(catNavigationBar, // custom bar
+                            expectHeight: CatSingleNavigationBar.Const.navBarHeight, // bar height
+                            backButton: catNavigationBar.backButton, // back button
+                            statusBarColor: UIColor.white, // color
+                            subViewTopConstraint: self.topConstraint) // CONSTRAINT
+```
+
+## TODO(milestone)
+
+- Fix some method name spelling
+- Scroll offset base navigationBar animation
+- Support TabBar
+- Update constraint after rotate orientation
 
 ## Installation
 
