@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'UnlimitBar'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'I HATE UINavigationBar attribute restriction!'
 
   s.description      = 'UINavigationBar has tooo many restriction, Lets make custom navigationBar as UIView!'
