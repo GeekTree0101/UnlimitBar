@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/UnlimitBar.svg?style=flat)](http://cocoapods.org/pods/UnlimitBar)
 [![Platform](https://img.shields.io/cocoapods/p/UnlimitBar.svg?style=flat)](http://cocoapods.org/pods/UnlimitBar)
 
+<img src="https://github.com/GeekTree0101/UnlimitBar/blob/master/resource/UnlimitBar1.png" />
+<img src="https://github.com/GeekTree0101/UnlimitBar/blob/master/resource/UnlimitBar2.png" />
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
